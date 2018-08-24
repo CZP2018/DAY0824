@@ -1,0 +1,56 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1534738028494" stop="1534738051979">
+  <name>test_login</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1534738028494" status="failed" stop="1534738051979">
+      <name>TestLogin.test_ty</name>
+      <failure>
+        <message>AssertionError: assert '请1输入' in '请输入手机号'
+ +  where '请输入手机号' = &lt;bound method Base.base_get_toast of &lt;Page.page_login.PageLogin object at 0x00000182D7700F98&gt;&gt;('请输入手机')
+ +    where &lt;bound method Base.base_get_toast of &lt;Page.page_login.PageLogin object at 0x00000182D7700F98&gt;&gt; = &lt;Page.page_login.PageLogin object at 0x00000182D7700F98&gt;.base_get_toast
+ +      where &lt;Page.page_login.PageLogin object at 0x00000182D7700F98&gt; = &lt;test_login.TestLogin object at 0x00000182D772D748&gt;.login</message>
+        <stack-trace>self = &lt;test_login.TestLogin object at 0x00000182D772D748&gt;
+
+    @allure.step("开始测试体验")
+    def test_ty(self):
+        # 点击体验
+        allure.attach("描述", "点击体验按钮")
+        self.login.page_click_ty_btn()
+        # 点击立即体验
+        allure.attach("描述", "点击立即体验按钮")
+        self.login.page_click_ljty_btn()
+        print("获取的toast值为:",self.login.base_get_toast("输入手机"))
+        try:
+            # 断言
+&gt;           assert "请1输入" in self.login.base_get_toast("请输入手机")
+E           AssertionError: assert '请1输入' in '请输入手机号'
+E            +  where '请输入手机号' = &lt;bound method Base.base_get_toast of &lt;Page.page_login.PageLogin object at 0x00000182D7700F98&gt;&gt;('请输入手机')
+E            +    where &lt;bound method Base.base_get_toast of &lt;Page.page_login.PageLogin object at 0x00000182D7700F98&gt;&gt; = &lt;Page.page_login.PageLogin object at 0x00000182D7700F98&gt;.base_get_toast
+E            +      where &lt;Page.page_login.PageLogin object at 0x00000182D7700F98&gt; = &lt;test_login.TestLogin object at 0x00000182D772D748&gt;.login
+
+Scripts\test_login.py:36: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="67380-MainThread"/>
+        <label name="host" value="LAPTOP-NJ1CSL3A"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1534738044545" status="failed" stop="1534738051944">
+          <name>开始测试体验</name>
+          <title>开始测试体验</title>
+          <attachments>
+            <attachment source="cbbb6b45-d8e6-42d7-945c-138eac9ab553-attachment.txt" title="描述" type="text/plain"/>
+            <attachment source="447c6b3b-4c42-4508-a90f-e62969dbc045-attachment.txt" title="描述" type="text/plain"/>
+            <attachment source="fe56c017-6fd8-4a03-af07-3f53fc22897d-attachment.txt" title="描述" type="text/plain"/>
+            <attachment source="242d2c2f-0a49-4832-be00-9860b7607559-attachment.png" title="描述：失败原因" type="image/png"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>
